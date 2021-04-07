@@ -3,7 +3,10 @@
 
 ## Prerequisite Installation
   ### 1. Strongly recommend to deploy the web application in **AWS Cloud9**, using an **Amazon Linux 2**. You may follow the steps [here](https://docs.aws.amazon.com/cloud9/latest/user-guide/setup-express.html)
-  ### 2. Clone this repo to local `git clone https://github.com/JXTryAgain/cs5224.git`
+  ### 2. Clone this repo to local
+  ```
+  git clone https://github.com/JXTryAgain/cs5224.git
+  ```
   ### 3. Terraform Setup [ref](https://learn.hashicorp.com/tutorials/terraform/install-cli)
   ```
   sudo yum install -y yum-utils
