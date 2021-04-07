@@ -45,4 +45,3 @@
   npm install --save serverless-python-requirements
   sls deploy
   ```
-    
