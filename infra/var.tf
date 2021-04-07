@@ -17,3 +17,7 @@ variable "ingressrules" {
   type    = list(number)
   default = [80, 443, 22, 8080]
 }
+
+variable "ami_hdb_webserver" {
+    default = "ami-01eb6415085364b6d"
+}

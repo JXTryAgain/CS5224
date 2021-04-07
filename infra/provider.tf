@@ -6,12 +6,12 @@ terraform {
         }
     }
     required_version = "~> 0.14"
-    
+    /*
     backend "s3" {
         bucket = "cs5224-hdb-price-prediction"
         key    = "terraform/terraform.tfstate"
         region = "us-east-1"
-  }
+    }*/
 }
 
 provider "aws" {

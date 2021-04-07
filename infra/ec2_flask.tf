@@ -1,6 +1,7 @@
 
 resource "aws_instance" "ubuntu" {
-    ami           = lookup(var.ami_linux, var.aws_region)
+    #ami           = lookup(var.ami_linux, var.aws_region)
+    ami = var.ami_hdb_webserver
     instance_type = "t2.micro"
     # VPC
     subnet_id = aws_subnet.project-subnet-public-1.id
@@ -9,6 +10,7 @@ resource "aws_instance" "ubuntu" {
     # the Public SSH key
     key_name = "cs5224"
     
+    /*
     provisioner "file" {
         source      = "./hdb.service"
         destination = "/tmp/hdb.service"
@@ -18,7 +20,11 @@ resource "aws_instance" "ubuntu" {
         source      = "./default"
         destination = "/tmp/default"
     }
-
+    
+    provisioner "file" {
+        source      = "../source/hdb.zip"
+        destination = "/tmp/hdb.zip"
+    }
     provisioner "remote-exec" {
         inline = [
           "sudo apt-get update",
@@ -26,9 +32,10 @@ resource "aws_instance" "ubuntu" {
           "mkdir hdb && cd hdb",
           "python3 -m venv venv",
           "source venv/bin/activate",
-          "pip install Flask",
+          "pip install flask",
           "sudo apt-get install unzip -y",
-          "wget https://cs5224-hdb-price-prediction.s3.amazonaws.com/hdb.zip",
+          #"wget https://cs5224-hdb-price-prediction.s3.amazonaws.com/hdb.zip",
+          "sudo cp -f /tmp/hdb.zip ./hdb.zip",
           "unzip hdb.zip -d .",
           "pip install gunicorn",
           "sudo cp -f /tmp/hdb.service /etc/systemd/system/hdb.service",
@@ -49,7 +56,7 @@ resource "aws_instance" "ubuntu" {
         user        = "ubuntu"
         private_key = file("~/environment/cs5224.pem")
     }
-
+    */
     tags = {
         "Name"      = "hdb-webserver"
         "Terraform" = "true"
