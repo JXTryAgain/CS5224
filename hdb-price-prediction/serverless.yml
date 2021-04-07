@@ -1,0 +1,28 @@
+service: hdb-price-prediction
+
+provider:
+  name: aws
+  region: us-east-1
+  stage: dev
+  endpointType: EDGE
+  ecr:
+    # In this section you can define images that will be built locally and uploaded to ECR
+    images:
+      baseimage:
+        path: ./
+      
+functions:
+  prediction:
+    image: 271570413145.dkr.ecr.us-east-1.amazonaws.com/web-dev-prediction@sha256:62b8d3865db916b2d392be8e7328e1e669d5406a49dd42a195ca768d8782b2e8
+    timeout: 10
+    description: Submit hdb information and starts predict process.
+    events:
+      - http: 
+          path: hdb
+          method: post
+      - http:
+          path: hdb
+          method: get
+          
+plugins:
+  - serverless-offline

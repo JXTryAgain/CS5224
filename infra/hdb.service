@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance for a hdb project
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/hdb
+ExecStart=/home/ubuntu/hdb/venv/bin/gunicorn -b localhost:8000 login:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
