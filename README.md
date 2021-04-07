@@ -38,7 +38,7 @@
   terraform apply -auto-approve
   ```
   Pleas wait for the infrastructure creation to be completed. You may expect to have VPC, subnet, internet gateway and rounter etc. to be auto setuped
-  ### 7. Serverless Deploy
+  #### 7. Serverless Deploy
   ```
   cd hdb-price-prediction
   npm init (press Enter all the way)
