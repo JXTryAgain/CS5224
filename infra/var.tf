@@ -19,5 +19,5 @@ variable "ingressrules" {
 }
 
 variable "ami_hdb_webserver" {
-    default = "ami-01eb6415085364b6d"
+    default = "ami-0b512bea82c235063"
 }
