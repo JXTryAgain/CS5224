@@ -45,3 +45,6 @@
   npm install --save serverless-python-requirements
   sls deploy
   ```
+ ## After Deployment 
+ Wait for the instance to be ready and copy Public IPv4 DNS address and paste it to a brownser
+ you should be able to see the webpage
