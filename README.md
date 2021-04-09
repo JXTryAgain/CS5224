@@ -2,8 +2,8 @@
   Kindly follow the steps below, if you want to deploy this web appliacation to your cloud. 
   or you can set up the web application locally
   
-## Test Web Application in AWS
-  pleas access this URL: `ec2-54-224-212-7.compute-1.amazonaws.com`
+## Test Web Application
+  Pleas access this URL: `ec2-54-224-212-7.compute-1.amazonaws.com`
   Navigate to **Prediction**
   ```
   town_name: HDB location you are interested (e.g. JURONG WEST)
@@ -14,7 +14,6 @@
   year: Which year you intent to buy a HDB (e.g. 2022)
   ```
   Click **Submit** then you will get a prediction price
-  
  ## Deploy Web Application in your own cloud 
   #### 1. Strongly recommend to deploy the web application in **AWS Cloud9**, using an **Amazon Linux 2**. 
   You may follow the steps [here](https://docs.aws.amazon.com/cloud9/latest/user-guide/setup-express.html)
