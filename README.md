@@ -26,7 +26,7 @@
   sudo yum install -y yum-utils
   sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
   sudo yum -y install terraform
-  terraform info
+  terraform -version
   ```
   #### 4. Terraform Deploy [ref](https://www.terraform.io/docs/cli/run/index.html)
   ```
