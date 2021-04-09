@@ -23,16 +23,17 @@
   sudo yum install docker
   sudo service docker start
   sudo usermod -a -G docker ec2-user
-  docker info
+  docker -v
   ```
   #### 5. Serverless Setup
   ```
   npm install serverless -g
+  serverless -version
   ```
  ## Deployment instructions
   #### 1. Terraform Deploy [ref](https://www.terraform.io/docs/cli/run/index.html)
   ```
-  cd infra/
+  cd cs5224/infra/
   terraform init
   terraform plan
   terraform apply -auto-approve
@@ -40,7 +41,7 @@
   Pleas wait for the infrastructure creation to be completed. You may expect to have VPC, subnet, internet gateway and rounter etc. to be auto setuped
   #### 2. Serverless Deploy
   ```
-  cd hdb-price-prediction
+  cd ../hdb-price-prediction
   npm init (press Enter all the way)
   npm install --save serverless-python-requirements
   sls deploy
