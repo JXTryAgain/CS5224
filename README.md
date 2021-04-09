@@ -1,7 +1,21 @@
 # HDB Price Prediction Project
   Kindly follow the steps below, if you want to deploy this web appliacation to your cloud. 
-
-## Prerequisite Installation
+  or you can set up the web application locally
+  
+## Test Web Application in AWS
+  pleas access this URL: `ec2-54-224-212-7.compute-1.amazonaws.com`
+  Navigate to **Prediction**
+  
+  town_name: HDB location you are interested (e.g. JURONG WEST)
+  area: HDB areas (e.g. 100)
+  lease_year: HDB Established year (e.g. 1999)
+  storey: HDB Floor you are interested (e.g. 10)
+  type: NO. of rooms you referred to (e.g. 3)
+  year: Which year you intent to buy a HDB (e.g. 2022)
+  
+  Click **Submit** then you will get a prediction price
+  
+ ## Deploy Web Application in your own cloud 
   #### 1. Strongly recommend to deploy the web application in **AWS Cloud9**, using an **Amazon Linux 2**. 
   You may follow the steps [here](https://docs.aws.amazon.com/cloud9/latest/user-guide/setup-express.html)
   #### 2. Clone this repo to local
@@ -15,23 +29,7 @@
   sudo yum -y install terraform
   terraform info
   ```
-  #### 4. Docker Installation
-  In order to build images locally and push them to ECR, you need to have Docker installed on your local machine.
-  ```
-  sudo yum update -y
-  sudo amazon-linux-extras install docker
-  sudo yum install docker
-  sudo service docker start
-  sudo usermod -a -G docker ec2-user
-  docker -v
-  ```
-  #### 5. Serverless Setup
-  ```
-  npm install serverless -g
-  serverless -version
-  ```
- ## Deployment instructions
-  #### 1. Terraform Deploy [ref](https://www.terraform.io/docs/cli/run/index.html)
+  #### 4. Terraform Deploy [ref](https://www.terraform.io/docs/cli/run/index.html)
   ```
   cd cs5224/infra/
   terraform init
@@ -39,13 +37,7 @@
   terraform apply -auto-approve
   ```
   Pleas wait for the infrastructure creation to be completed. You may expect to have VPC, subnet, internet gateway and rounter etc. to be auto setuped
-  #### 2. Serverless Deploy
-  ```
-  cd ../hdb-price-prediction
-  npm init (press Enter all the way)
-  npm install --save serverless-python-requirements
-  sls deploy
-  ```
- ## After Deployment 
- Wait for the instance to be ready and copy Public IPv4 DNS address and paste it to a brownser
- you should be able to see the webpage
+  #### 5. After Deployment 
+  Wait for the instance to be ready and copy Public IPv4 DNS address and paste it to a brownser
+  you should be able to see the webpage
+  then follow the steps in **Test Web Application in AWS** to test
