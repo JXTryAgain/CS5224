@@ -11,7 +11,7 @@
   lease_year: HDB Established year (e.g. 1999)
   storey: HDB Floor you are interested (e.g. 10)
   type: NO. of rooms you referred to (e.g. 3)
-  year: Which year you intent to buy a HDB (e.g. 2022)
+  year: Which year you intent to buy a HDB (e.g. 2021)
   ```
   Click **Submit** then you will get a prediction price
  ## Deploy Web Application in your own cloud 
