@@ -7,7 +7,6 @@ hdb-price-prediction/node_modules/
 hdb-price-prediction/venv/
 hdb-price-prediction/.npmignore
 hdb-price-prediction/app_bk.py
-hdb-price-prediction/*.json
 hdb-price-prediction/*.md
 infra/.terraform/
 infra/.terraform.lock.hcl
