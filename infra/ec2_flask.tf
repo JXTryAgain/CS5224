@@ -8,7 +8,7 @@ resource "aws_instance" "ubuntu" {
     # Security Group
     vpc_security_group_ids = [aws_security_group.ssh-allowed.id]
     # the Public SSH key
-    key_name = "cs5224"
+    #key_name = "cs5224"
     
     /*
     provisioner "file" {
@@ -48,15 +48,15 @@ resource "aws_instance" "ubuntu" {
           "sudo cp -f /tmp/default /etc/nginx/sites-available/default",
           "sudo systemctl restart nginx",
         ]
-    }
+    }*/
     
     connection {
         type        = "ssh"
         host        = self.public_ip
         user        = "ubuntu"
-        private_key = file("~/environment/cs5224.pem")
+        private_key = file("./cs5224.pem")
     }
-    */
+    
     tags = {
         "Name"      = "hdb-webserver"
         "Terraform" = "true"
